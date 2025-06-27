@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Session Screen</title>
+  <link rel="stylesheet" href="/css/session.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Đồng hồ ở giữa -->
+    <div class="clock-container">
+      <div id="clock">00:00:00</div>
+    </div>
+
+    <!-- Cột Task bên phải -->
+    <div class="task-list" id="task-list">
+      <h2>Tasks in Session</h2>
+      <!--<div class="task">
+  <div class="task-header">
+    <div class="task-name">Thiết kế giao diện</div>
+    
+  </div>
+
+
+  <div class="progress-bar">
+    <div class="progress" style="width: 60%;"></div>
+  </div>
+
+
+  <div class="progress-input-container">
+    <input type="number" class="progress-input" min="0" max="100" value="60" oninput="updateProgressBar(this)"> %
+  </div>
+</div>
+
+      <div class="task">
+  <div class="task-header">
+    <div class="task-name">Thiết kế giao diện</div>
+    
+  </div>
+
+ 
+  <div class="progress-bar">
+    <div class="progress" style="width: 60%;"></div>
+  </div>
+
+ 
+  <div class="progress-input-container">
+    <input type="number" class="progress-input" min="0" max="100" value="60" oninput="updateProgressBar(this)"> %
+  </div>
+</div>-->
+
+      <!-- Thêm task khác nếu muốn -->
+    </div>
+  </div>  
+  <div class="top-bar">
+  <button class="end-session-btn" id="end-session-btn" onclick="onClickEndSession()">
+    End Session
+  </button>
+</div>
+  <!-- Popup: Start Session -->
+<div id="startSessionPopup" class="popup-overlay">
+  <div class="popup-box">
+    <p>Do you want to start a session?</p>
+    <div class="popup-actions">
+      <button onclick="startSession()">Yes</button>
+      <button onclick="doNotStartSession()">No</button>
+    </div>
+  </div>
+</div>
+
+<!-- Popup: End Session -->
+<div id="endSessionPopup" class="popup-overlay">
+  <div class="popup-box">
+    <p>Do you want to end this session?</p>
+    <div class="popup-actions">
+      <button onclick="confirmEndSession()">Yes</button>
+      <button onclick="closePopup('endSessionPopup')">No</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/session.js">
+    
+  </script>
+</body>
+</html>

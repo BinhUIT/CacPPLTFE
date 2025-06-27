@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Detail</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .navbar {
+      background-color: #343a40;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .navbar-brand {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .navbar-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .navbar-links a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .logout-btn {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #c82333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .task-detail h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    .task-item {
+      margin-bottom: 20px;
+    }
+
+    .task-item label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .task-item .value {
+      color: #222;
+      font-size: 1.05em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-brand">Work Management</div>
+  <div class="navbar-links">
+    <a href="dashboard.html" class="active">Dashboard</a>
+   
+    <a href="/reports.html">Reports</a>
+    <form method="post" style="display: inline;">
+      <button type="submit" class="logout-btn">Logout</button>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="task-detail">
+    <h2>Task Detail</h2>
+
+    <div class="task-item">
+      <label>Name:</label>
+      <div class="value" id="task-name">Implement login page</div>
+    </div>
+
+    <div class="task-item">
+      <label>Description:</label>
+      <div class="value" id="task-description">Create UI and logic for user login functionality</div>
+    </div>
+
+    <div class="task-item">
+      <label>Start Time:</label>
+      <div class="value" id="task-start">2025-06-20 09:00</div>
+    </div>
+
+    <div class="task-item">
+      <label>End Time:</label>
+      <div class="value" id="task-end">2025-06-21 17:00</div>
+    </div>
+
+    <div class="task-item">
+      <label>Complete Time:</label>
+      <div class="value" id="task-complete">2025-06-21 16:45</div>
+    </div>
+  </div>
+</div>
+<script src="./js/taskDetail.js"></script>
+
+</body>
+</html>

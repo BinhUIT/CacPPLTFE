@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thêm Task Mới</title>
+  <link rel="stylesheet" href="./css/newtask.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2 class="form-title">Add new task</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="startTime">Start time</label>
+        <input type="datetime-local" id="startTime" name="startTime" required>
+      </div>
+
+      <div class="form-group">
+        <label for="endTime">End time</label>
+        <input type="datetime-local" id="endTime" name="endTime" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+      </div>
+
+      
+
+      <div class="form-actions">
+        <button id="submit">Create task</button>
+      </div>
+    </form>
+  </div>
+  <script src="/js/newtask.js"></script>
+</body>
+</html>

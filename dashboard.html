@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Work Management</title>
+    <link rel="stylesheet" href="/css/dashboard.css"> </head>
+<body>
+<div class="navbar">
+    <div class="navbar-brand">Work Management</div>
+    <div class="navbar-links">
+        <a href="/dashboard.html" class="active">Dashboard</a>
+        
+        <a href="/reports.html">Reports</a>
+        <a href="/userInfo.html">Info</a>
+        <form  method="post" style="display: inline;">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+    </div>
+</div>
+
+<div class="dashboard-container">
+    <h1>Welcome, <span id="username">User!</span></h1>
+
+    <div class="summary-cards">
+        <div class="card">
+            <h3>Tasks Due Soon</h3>
+            <p>You have <strong><span>5</span></strong> tasks due in the next 7 days.</p>
+            <a href="/tasks" class="card-link">View All Tasks</a>
+        </div>
+        <div class="card">
+            <h3>Active Session</h3>
+            <p>
+                Currently in session since <strong>08:00 AM</strong>.
+            </p>
+            <p>
+                No active session. <a href="/session.html">Start a new session</a>.
+            </p>
+            <a  href="/sessions" class="card-link">Manage Sessions</a>
+        </div>
+        <div class="card">
+            <h3>Completed Today</h3>
+            <p>You've completed <strong><span>2</span></strong> tasks today.</p>
+            <a href="/reports" class="card-link">View Reports</a>
+        </div>
+    </div>
+
+    <div class="recent-activity">
+        <h2>Recent Activity</h2>
+        <div>
+            <p>No recent activity. Start by creating a <a href="newtask.html">new task</a>!</p>
+        </div>
+        <ul   id="task-list" class="task-list">
+            <li >
+                <span >Task Name</span> -
+                <span >Progress</span> -
+                <span>Due Date</span>
+                <a class="view-task-link">View</a>
+            </li>
+        </ul>
+    </div> 
+
+</div> 
+<div id="delete-popup" style="display: none;" class="popup-overlay">
+  <div class="popup-box">
+    <p>Do you want to delete this task?</p>
+    <div class="popup-buttons">
+      <button id="confirm-delete" class="btn btn-danger">Yes</button>
+      <button id="cancel-delete" class="btn btn-cancel">No</button>
+    </div>
+  </div>
+</div>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

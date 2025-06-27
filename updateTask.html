@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Update Task</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .navbar {
+      background-color: #343a40;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .navbar-brand {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .navbar-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .navbar-links a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .logout-btn {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #c82333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="datetime-local"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .btn-update {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn-update:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-brand">Work Management</div>
+  <div class="navbar-links">
+    <a href="/dashboard.html" class="active">Dashboard</a>
+    <a href="/reports.html">Reports</a>
+    <form method="post" style="display: inline;">
+      <button type="submit" class="logout-btn">Logout</button>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Update Task</h2>
+  <form id="update-task-form">
+    <div class="form-group">
+      <label for="name">Task Name:</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="endTime">End Time:</label>
+      <input type="datetime-local" id="endTime" name="endTime" required />
+    </div>
+
+    <button id="submit"  class="btn-update">Update</button>
+  </form>
+</div>
+<script src="./js/updateTask.js"></script>
+</body>
+</html>
