@@ -126,6 +126,7 @@
         <a href="/dashboard.html">Dashboard</a>
        
         <a href="/reports.html" class="active">Reports</a>
+        <a href="userInfo.html">Info</a>
         <form style="display: inline;">
             <button type="submit" class="logout-btn">Logout</button>
         </form>
@@ -182,7 +183,16 @@
 <div class="report-section">
     <h2>Completed task in week</h2>
     <canvas id="complete-task-statistic" height="120"></canvas>
-</div> 
+</div>  
+<div id="logoutPopup" class="popup-overlay">
+  <div class="popup-box">
+    <p>Do you want to logout</p>
+    <div class="popup-actions">
+      <button onclick="logout()">Yes</button>
+      <button onclick="doNotLogout()">No</button>
+    </div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>

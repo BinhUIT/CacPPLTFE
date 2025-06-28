@@ -265,5 +265,16 @@ function exportToExcel(data, fileName = "report.xlsx") {
 
    
     XLSX.writeFile(workbook, fileName);
+} 
+document.getElementById("logoutbutton").addEventListener("click",e=>{
+    e.preventDefault();
+    document.getElementById("logoutPopup").style.display="flex";
+});
+function logout(){
+    localStorage.clear();
+    window.location.href="/index.html";
+}
+function doNotLogout() {
+    document.getElementById("logoutPopup").style.display="none";
 }
 setUpForGenerateReport();

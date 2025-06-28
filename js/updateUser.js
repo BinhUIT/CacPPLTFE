@@ -29,4 +29,15 @@ document.getElementById("submit").addEventListener("click",async(e)=>{
         alert("Update info fail");
     }
     window.location.href="dashboard.html";
-})
+}); 
+document.getElementById("logoutbutton").addEventListener("click",e=>{
+    e.preventDefault();
+    document.getElementById("logoutPopup").style.display="flex";
+});
+function logout(){
+    localStorage.clear();
+    window.location.href="/index.html";
+}
+function doNotLogout() {
+    document.getElementById("logoutPopup").style.display="none";
+}

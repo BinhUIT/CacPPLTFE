@@ -70,9 +70,9 @@
 <div class="navbar">
   <div class="navbar-brand">Work Management</div>
   <div class="navbar-links">
-    <a href="/dashboard.html" class="active">Dashboard</a>
+    <a href="/dashboard.html">Dashboard</a>
     <a href="/reports.html">Reports</a>
-    <a>Info</a>
+    <a href="/userInfo.html" class="active">Info</a>
     <form method="post" style="display: inline;">
       <button type="submit" class="logout-btn">Logout</button>
     </form>
@@ -99,6 +99,15 @@
 
     <button  class="btn-update" id="submit">Save Changes</button>
   </form>
+</div> 
+<div id="logoutPopup" class="popup-overlay">
+  <div class="popup-box">
+    <p>Do you want to logout</p>
+    <div class="popup-actions">
+      <button onclick="logout()">Yes</button>
+      <button onclick="doNotLogout()">No</button>
+    </div>
+  </div>
 </div>
 
 <script src="./js/updateUser.js">

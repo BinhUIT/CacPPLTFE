@@ -14,7 +14,7 @@
         <a href="/reports.html">Reports</a>
         <a href="/userInfo.html">Info</a>
         <form  method="post" style="display: inline;">
-            <button type="submit" class="logout-btn">Logout</button>
+            <button id="logoutbutton" class="logout-btn">Logout</button>
         </form>
     </div>
 </div>
@@ -67,6 +67,15 @@
     <div class="popup-buttons">
       <button id="confirm-delete" class="btn btn-danger">Yes</button>
       <button id="cancel-delete" class="btn btn-cancel">No</button>
+    </div>
+  </div>
+</div>
+<div id="logoutPopup" class="popup-overlay">
+  <div class="popup-box">
+    <p>Do you want to logout</p>
+    <div class="popup-actions">
+      <button onclick="logout()">Yes</button>
+      <button onclick="doNotLogout()">No</button>
     </div>
   </div>
 </div>
