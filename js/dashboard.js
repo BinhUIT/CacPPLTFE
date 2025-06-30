@@ -39,21 +39,20 @@ async function loadTask() {
             localStorage.setItem("current-taskId",responseData[i].taskId);
             window.location.href="taskDetail.html";
         })
+        if(responseData[i].currentProgress<1) {
         const updateTask = document.createElement("button");
         updateTask.innerHTML="Update";
         updateTask.setAttribute("class","view-task-link");
         updateTask.style.background="yellow";
         updateTask.style.color="black";
         updateTask.addEventListener("click",function(e){
-            e.preventDefault();
-            if(responseData[i].currentProgress>=1) {
-                alert("You can not update completed task");
-                return;
-            } 
+            
             localStorage.setItem("current-taskId",responseData[i].taskId);
             window.location.href="updateTask.html";
         })
-        liTag.appendChild(updateTask);
+        liTag.appendChild(updateTask); 
+
+    }
         if(responseData[i].currentProgress<1) {
             const deleteTask = document.createElement("button"); 
             deleteTask.setAttribute("class","view-task-link");
@@ -105,4 +104,15 @@ document.getElementById("confirm-delete").addEventListener("click",async (e)=>{
     alert(responseMessage);
     window.location.reload();
 })
+document.getElementById("logoutbutton").addEventListener("click",e=>{
+    e.preventDefault();
+    document.getElementById("logoutPopup").style.display="flex";
+});
+function logout(){
+    localStorage.clear();
+    window.location.href="/index.html";
+}
+function doNotLogout() {
+    document.getElementById("logoutPopup").style.display="none";
+}
 loadTask();

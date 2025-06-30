@@ -87,7 +87,9 @@ async function getWorkTime() {
         }
     });
     if(response.ok) {
+        
         workTime= await response.json();
+        console.log("WorkTime",workTime);
     }
 }
 async function getSessionInWeek() {
@@ -112,7 +114,7 @@ async function displayToUI() {
             completedTask++;
         }
     }
-    const workHours = Math.floor(workTime/3600000);
+    const workHours = Math.floor(parseInt(workTime)/3600000);
     document.getElementById("completedTask").innerHTML= completedTask;
     document.getElementById("work-time").innerHTML=workHours;
     document.getElementById("average-complete-time").innerHTML=workHours/completedTask;
@@ -265,5 +267,16 @@ function exportToExcel(data, fileName = "report.xlsx") {
 
    
     XLSX.writeFile(workbook, fileName);
+} 
+document.getElementById("logoutbutton").addEventListener("click",e=>{
+    e.preventDefault();
+    document.getElementById("logoutPopup").style.display="flex";
+});
+function logout(){
+    localStorage.clear();
+    window.location.href="/index.html";
+}
+function doNotLogout() {
+    document.getElementById("logoutPopup").style.display="none";
 }
 setUpForGenerateReport();
