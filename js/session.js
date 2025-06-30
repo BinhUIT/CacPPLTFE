@@ -22,7 +22,7 @@ async function startSession() {
     method: "GET",
     headers: {
       "Content-type": "application/json",
-      Authorization: "Bearer " + tokenup,
+      Authorization: "Bearer " + token,
     },
   });
   if (!response.ok) {
