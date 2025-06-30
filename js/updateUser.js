@@ -36,7 +36,7 @@ document.getElementById("logoutbutton").addEventListener("click",e=>{
 });
 function logout(){
     localStorage.clear();
-    window.location.href="/index.html";
+    window.location.href="./index.html";
 }
 function doNotLogout() {
     document.getElementById("logoutPopup").style.display="none";
